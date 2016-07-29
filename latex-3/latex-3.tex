@@ -1,0 +1,234 @@
+\documentclass[serif,10pt,utf8, russian]{beamer}
+\usepackage[russian]{babel}
+\usecolortheme{albatross}
+\useoutertheme{shadow}
+\useinnertheme{rounded}
+\setbeamercovered{transparent}
+\begin{document}
+
+\begin{frame}
+\begin{block}{\begin{center}Использование балансовых моделей в задачах маркетинга\end{center}}
+\begin{center}
+Докладчик:\\
+Студент ІІІ курса\\
+Прикладной математики\\
+Чеповский Иван
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}{Постановка классической задачи МОБ}
+\begin{center}
+\par{Пусть заданы:}
+\end{center}
+\begin{itemize}
+\item Вектор конечного спроса $\bar y = {\left({y}_1, {y}_2, \dots , {y}_n\right)}^\text{т}$
+\pause
+\item Вектор валовых выпусков $\bar x = {\left({x}_1, {x}_2, \dots , {x}_n\right)}^\text{т}$
+\pause
+\item Вектор промежуточной продукции $\bar x' = {\left({x'}_1, {x'}_2, \dots , {x'}_n\right)}^\text{т}$
+\pause
+\begin{align}
+{x}_i &= {f}_i\left({y}_1, {y}_2, \dots, {y}_n\right),\ i=\overline{1,n}\label{one}\\
+\pause
+{x}_{ij} &= {\varphi}_{ij}\left({x}_j\right)\label{two}
+\end{align}
+\pause
+\item Величина ${x}_{ij}$ - часть ${x'}_i$, необходимая для производства количества продукции ${x}_j$ отрасли $j = \overline{1,n}$
+\end{itemize}
+\pause
+\begin{align}
+{x'}_i &= {x}_{i1} + {x}_{i2} + \dots + {x}_{in} = \sum_{j=1}^n {x}_{ij}, \quad i = \overline{1,n} \label{three}
+\end{align}
+\end{frame}
+
+\begin{frame}{Постановка классической задачи МОБ}
+\begin{align}
+{x}_{ij} &= {a}_{ij}\cdot{x}_j + {b}_{ij}\label{four}
+\end{align}
+\pause
+\begin{itemize}
+\item Технологическая матрица $A=\left({a}_{ij}\right)$
+\end{itemize}
+\pause
+\begin{block}{Каноническая форма СММБ:}
+\pause
+\begin{equation}
+A\cdot\bar x + \bar y = \bar x \label{five}
+\end{equation}
+\end{block}
+\pause
+\begin{block}{Приведенная форма СММБ:}
+\pause
+\begin{equation}
+\bar x = B\cdot\bar y \label{six}
+\end{equation}
+\pause
+\par{где\\}
+\begin{equation}
+B = \left({b}_{ij}\right) = {\left( E-A\right)}^{-1} \notag
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{Постановка классической задачи МОБ}
+\begin{itemize}
+\item Матрица межотраслевых потоков $X = \begin{pmatrix}x_{11} & \dots & x_{1n} \\\vdots & \ddots & \vdots \\x_{n1} & \dots & x_{nn}\end{pmatrix}$
+\pause
+\item ${z}_j={x}_j - \sum\limits_{i=1}^n {x}_{ij} > 0, \quad j = \overline{1,n}$ - добавленная стоимость отрасли $j$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{СММБ в натуральном выражении}
+\begin{itemize}
+\item ${x}_i^*$ - количество валовой продукции $i$ в натуральном выражении
+\pause
+\item ${y}_i^*$ - количество конечной продукции отрасли $i$ в натуральном выражении
+\pause
+\begin{equation}
+{x}_i = {p}_i\cdot{x}_i^*,\ \ {y}_i = {p}_i\cdot{y}_i^*\label{seven}
+\end{equation}
+\pause
+\item Матрица цен $P = \begin{pmatrix}p_{1} & \dots & 0 \\\vdots & \ddots & \vdots \\0 & \dots & p_{n}\end{pmatrix}$
+\end{itemize}
+\pause
+\begin{block}{СММБ в натуральном выражении:}
+\pause
+\begin{equation}
+{A}^*\cdot\bar {x}^* + \bar {y}^* = \bar {x}^* \label{eight}
+\end{equation}
+\end{block}
+\pause
+\begin{block}{Приведенная форма СММБ в натуральном выражении:}
+\pause
+\begin{equation}
+\bar {x}^* = {B}^*\cdot\bar {y}^* \label{nine}
+\end{equation}
+\pause
+\begin{equation}
+\text{где }{A}^* = {P}^{-1}\cdot A\cdot P \text{ и } {B}^* = {P}^{-1}\cdot B\cdot P \notag
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{Продуктивность матрицы}
+\begin{block}{Всякую квадратную матрицу с неотрицательными коэффициентами назовем \textit{\underline{продуктивной}}, если:}
+\pause
+\begin{itemize}
+\item[$-$] Существует матрица $B$
+\pause
+\item[$-$] Коэффициенты матрицы $B$ удовлетворяют условиям:
+\pause
+\begin{enumerate}
+\item ${b}_{ij}\ge 0$ при всех допустимых $i$ и $j$
+\pause
+\item ${b}_{ij}\ge 1$ при всех $j = 1, 2,\dots, n$
+\end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Продуктивность матрицы}
+\begin{block}{Для матриц определены следующие нормы:}
+\pause
+\begin{center}
+\par{${\left| A\right|}_1 = \max\limits_{1\le j\le n}{\sum\limits_{i=1}^n {a}_{ij}}$, ${\left| A\right|}_2 = \max\limits_{1\le i\le n}{\sum\limits_{j=1}^n {a}_{ij}}$, ${\left| A\right|}_3 = n\cdot\max\limits_{i,j}{{a}_{ij}}$, ${\left| A\right|}_4 = \sqrt{\sum\limits_{i=1}^n{\sum\limits_{j=1}^n {a}_{ij}^2}}$, ${\left| A\right|}_5 = \max\limits_{1\le j\le n}{\left|{\lambda}_j\left(A \right) \right|}$}
+\end{center}
+\pause
+\end{block}
+\begin{block}{\textit{Достаточное} условие продуктивности матрицы:}
+\pause
+\begin{center}
+\par{Если справедливо неравенство $\left|A \right|<1$, где $\left|A \right|=\min\limits_{1\le k \le 5}{{\left| A\right|}_k}$, то матрица $A$ продуктивна}
+\end{center}
+\pause
+\end{block}
+\begin{block}{\textit{Необходимое} условие продуктивности матрицы:}
+\pause
+\begin{center}
+\par{${\left| A\right|}_5<1$}
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}{Равновесные цены}
+\begin{itemize}
+\item ${\nu}_j=1-\sum\limits_{i=1}^n$ при $j=\overline{1,n}$ - доля добавленной стоимости
+\pause
+\begin{equation}
+\bar{\nu}^*=\left( E-{{A}^*}^\text{т}\right)\cdot\bar {p}_A\text{ - уравнение равновесных цен}\label{ten}
+\end{equation}
+\pause
+\item $\bar {p}_A={\left(E-{{A}^*}^\text{т} \right)}^{-1}\cdot\bar{\nu}^*={{B}^*}^\text{т}\cdot\bar{\nu}^*$ - вектор цен по матрице $A$
+\pause
+\item $\bar{p}_A=P\cdot{B}^\text{т}\cdot\bar\nu$ - вектор цен по матрице $A$ в стоимостном выражении
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Обобщенная МОБ}
+\begin{itemize}
+\item ${S}_{ij}$ - величина запаса продукции $i$-ого вида, которая используется для производства $j$-ой продукции
+\pause
+\item ${s}_{ij}=\frac{{S}_{ij}}{{x}_j}$; $i,j=\overline{1,n}$ - коэффициенты запасоемкости
+\end{itemize}
+\pause
+\begin{block}{Каноническая форма обобщенной МОБ:}
+\pause
+\begin{equation}
+\bar x=A\bar x + S\bar x + \bar y\label{eleven}
+\end{equation}
+\end{block}
+\pause
+\begin{block}{Приведенная форма обобщенной МОБ:}
+\pause
+\begin{equation}
+\bar x = {\left(E-A-S \right)}^{-1}\bar y\label{twelve}
+\end{equation}
+\pause
+\begin{equation}
+\text{где } {B}^{\left( A+S\right)}={\left( E-A-S\right)}^{-1}\notag
+\end{equation}
+\end{block}
+\pause
+\begin{itemize}
+\item $\bar{p}_S=P\cdot{{B}^S}^\text{т}\cdot\bar\nu$ - вектор цен по матрице $S$
+\pause
+\item $\bar{p}_{A+S}=P\cdot{{B}^{\left(A+S\right)}}^\text{т}\cdot\bar\nu$ - вектор цен по сумме матриц $A+S$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Динамическая обобщенная МОБ}
+\begin{itemize}
+\item $t=\overline{0,h}$ - временной показатель
+\end{itemize}
+\pause
+\begin{block}{Каноническая форма ДММБ:}
+\pause
+\begin{equation}
+\sum\limits_{t=0}^h{\bar x}=\sum\limits_{t=0}^h{\left( A\bar x + S\bar x + \bar y\right)}
+\end{equation}
+\end{block}
+\pause
+\begin{block}{Приведенная форма ДММБ}
+\pause
+\begin{equation}
+\sum\limits_{t=0}^h{\bar x}=\sum\limits_{t=0}^h{B\cdot\bar y}
+\end{equation}
+\end{block}
+\pause
+\begin{itemize}
+\item$\sum\limits_{t=0}^h{\bar{p}_A}=\left(\sum\limits_{t=0}^h{P\cdot{{B}^A}^\text{т}\cdot\bar\nu} \right)$ - вектор цен по матрице $A$
+\pause
+\item$\sum\limits_{t=0}^h{\bar{p}_S}=\left(\sum\limits_{t=0}^h{P\cdot{{B}^S}^\text{т}\cdot\bar\nu} \right)$ - вектор цен по матрице $S$
+\pause
+\item$\sum\limits_{t=0}^h{\bar{p}_{A+S}}=\left(\sum\limits_{t=0}^h{P\cdot{{B}^{\left( A+S\right)}}^\text{т}\cdot\bar\nu} \right)$ - вектор цен по сумме матриц $A+S$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\par{\large СПАСИБО ЗА ВНИМАНИЕ!}
+\end{center}
+\end{frame}
+
+\end{document}
